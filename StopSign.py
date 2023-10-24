@@ -63,4 +63,5 @@ turtle.pendown()
 turtle.goto(0,-25)
 turtle.color("white")
 turtle.write("STOP", align = "center", font=("Calabri", 35, "bold"))
+turtle.hideturtle()
 
