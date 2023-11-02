@@ -1,15 +1,11 @@
 # DS502-50 - Introduction to Computer Science
 # Shobharani Polasa
-# Average From Input File with Exception Handling
+# AverageFromInput
 
 def main():
     try:
         total, count = sumNumbers()
         averageNumbers(total, count)
-    except IOError:
-        print("The file could not be opened.")
-    except ValueError:
-        print("Unexpected data. Please only input numbers.")
     except:
         print("An error occured when trying to execute the program.")
         
@@ -26,9 +22,8 @@ def sumNumbers():
 
 def averageNumbers(total, count):
     average = total/(count-1)
-    print(f'Average: {average:.2f}')
+    print(f'Average: {average:.1f}')
 
 # Call the main function.
 if __name__ == '__main__':
     main()
-
