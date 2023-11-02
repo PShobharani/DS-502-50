@@ -1,18 +1,34 @@
 # DS502-50 - Introduction to Computer Science
 # Shobharani Polasa
-# AverageFromInput
+# Average From Input File with Exception Handling
 
 def main():
-    file_object = open('numbers.txt' ,'r')
-    x = 0
+    try:
+        total, count = sumNumbers()
+        averageNumbers(total, count)
+    except IOError:
+        print("The file could not be opened.")
+    except ValueError:
+        print("Unexpected data. Please only input numbers.")
+    except:
+        print("An error occured when trying to execute the program.")
+        
+def sumNumbers():
+    infile = open('numbers.txt', 'r')
     total = 0
-    for nums in file_object:
-        x = x + 1
-        amount = float(nums)
-        total = total + amount
-        print(f"I read in {x} number(s) "f"Current number is:     {amount:.1f}"f"  Total is: {total:.1f}")
-    file_object.close()
-    average = total / x
-    print (f"Average: {average:.1f}")
+    count = 1
+    for line in infile:
+        number = float(line)
+        total += number
+        print(f"I read in {count} number(s) "f"Current number is:     {number:.2f}"f"  Total is:  {total:.2f}")
+        count+=1
+    return total, count
 
-main()
+def averageNumbers(total, count):
+    average = total/(count-1)
+    print(f'Average: {average:.2f}')
+
+# Call the main function.
+if __name__ == '__main__':
+    main()
+
