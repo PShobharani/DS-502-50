@@ -9,9 +9,6 @@
 import matplotlib.pyplot as plt
 import random
 
-import matplotlib.pyplot as plt
-import random
-
 def generate_random_value():
     return random.randint(100, 1000)  # Generates a random value between 100 and 1000
 
